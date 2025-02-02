@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation Schedule</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .time-slot {
+        height: 60px;
+      }
+      .time-slot-height {
+        height: 60px;
+      }
+
+      .reservation-card {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div
+      class="fixed left-0 top-0 h-screen w-20 bg-white border-r flex flex-col items-center py-6 gap-8"
+    >
+      <div
+        class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center"
+      >
+        <span class="text-white text-xl font-bold">E</span>
+      </div>
+
+      <!-- Sidebar Icons -->
+      <nav class="flex flex-col gap-6">
+        <a href="#" class="p-3 rounded-xl hover:bg-orange-50">
+          <img src="./icon/new/arrow-right1.png" alt="Home" class="w-6 h-6" />
+        </a>
+        <a href="#" class="p-3 rounded-xl hover:bg-orange-50">
+          <img src="./icon/new/menu2.png" alt="Calendar" class="w-6 h-6" />
+        </a>
+        <a href="#" class="p-3 rounded-xl hover:bg-orange-50">
+          <img
+            src="./icon/new/clipboard-text3.png"
+            alt="Document"
+            class="w-6 h-6"
+          />
+        </a>
+        <a href="#" class="p-3 rounded-xl hover:bg-orange-50">
+          <img src="./icon/new/buliding4.png" alt="Settings" class="w-6 h-6" />
+        </a>
+        <a href="#" class="p-3 rounded-xl hover:bg-orange-50">
+          <img
+            src="./icon/new/document-text5.png"
+            alt="Settings"
+            class="w-6 h-6"
+          />
+        </a>
+        <a href="#" class="p-3 rounded-xl hover:bg-orange-50">
+          <img src="./icon/new/setting-6.png" alt="Settings" class="w-6 h-6" />
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-20 p-6">
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-semibold">Reservation Schedule</h1>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <img
+              src="./icon/fotoangela.jpg"
+              alt="Profile"
+              class="w-10 h-10 rounded-full"
+            />
+            <span class="text-gray-600">Angelina</span>
+          </div>
+          <button class="text-red-500">
+            <img src="./icon/new/logout7.png" alt="Logout" class="w-6 h-6" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="flex gap-4 mb-8 items-center">
+        <div class="text-gray-700 font-medium">Wednesday, 30 October 2024</div>
+        <div class="flex gap-4 flex-1">
+          <input
+            type="date"
+            class="px-4 py-2 border rounded-lg bg-white"
+            placeholder="Select Start Date"
+          />
+          <input
+            type="date"
+            class="px-4 py-2 border rounded-lg bg-white"
+            placeholder="Select End Date"
+          />
+          <button
+            class="px-6 py-2 text-orange-500 border border-orange-500 rounded-lg hover:bg-orange-50"
+          >
+            Search
+          </button>
+        </div>
+        <button
+          class="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
+        >
+          + Add New Reservation
+        </button>
+      </div>
+
+      <!-- Schedule Grid -->
+      <div class="grid grid-cols-3 gap-0">
+        <!-- Aster Room -->
+        <div class="bg-white rounded-lg p-4 border">
+          <h2 class="text-xl font-semibold text-center mb-6">Aster Room</h2>
+          <div class="relative">
+            <!-- Time Slots -->
+            <div
+              class="absolute left-0 w-16 space-y-[60px] text-sm text-gray-500"
+            >
+              <div>08.00</div>
+              <div>09.00</div>
+              <div>10.00</div>
+              <div>11.00</div>
+              <div>12.00</div>
+              <div>13.00</div>
+              <div>14.00</div>
+              <div>15.00</div>
+              <div>16.00</div>
+            </div>
+
+            <!-- Reservations -->
+            <div class="ml-16 relative min-h-[540px]">
+              <!-- PT Maju Jaya -->
+              <div
+                class="absolute top-0 left-0 right-4 bg-white border rounded-lg p-3"
+                style="height: 120px"
+              >
+                <div class="font-medium">PT Maju Jaya</div>
+                <div class="text-sm text-gray-500">13.00 - 14.00 WIB</div>
+                <span
+                  class="absolute right-2 top-2 text-xs px-2 py-1 bg-gray-100 rounded"
+                  >Done</span
+                >
+              </div>
+
+              <!-- Organisasi Muslim Pusat -->
+              <div
+                class="absolute top-[300px] left-0 right-4 bg-orange-50 border rounded-lg p-3"
+                style="height: 120px"
+              >
+                <div class="font-medium">Organisasi Muslim Pusat</div>
+                <div class="text-sm text-gray-500">13.00 - 15.00 WIB</div>
+                <span
+                  class="absolute right-2 top-2 text-xs px-2 py-1 text-orange-500 bg-orange-50 border border-orange-500 rounded"
+                  >Up coming</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blubell Room -->
+        <div class="bg-white rounded-lg p-4 border">
+          <h2 class="text-xl font-semibold text-center mb-6">Blubell Room</h2>
+          <div class="relative">
+            <!-- Time Slots -->
+            <div
+              class="absolute left-0 w-16 space-y-[60px] text-sm text-gray-500"
+            ></div>
+
+            <!-- Reservations -->
+            <div class="ml-16 relative min-h-[540px]">
+              <!-- PT XYZ Corp -->
+              <div
+                class="absolute top-[120px] left-0 right-4 bg-orange-50 border rounded-lg p-3"
+                style="height: 60px"
+              >
+                <div class="font-medium">PT XYZ Corp</div>
+                <div class="text-sm text-gray-500">10.00 - 11.00 WIB</div>
+                <span
+                  class="absolute right-2 top-2 text-xs px-2 py-1 text-green-600 bg-green-50 border border-green-600 rounded"
+                  >In Progress</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camellia Room -->
+        <div class="bg-white rounded-lg p-4 border">
+          <h2 class="text-xl font-semibold text-center mb-6">Camellia Room</h2>
+          <div class="relative">
+            <!-- Time Slots -->
+            <div
+              class="absolute left-0 w-16 space-y-[60px] text-sm text-gray-500"
+            ></div>
+
+            <!-- Reservations -->
+            <div class="ml-16 relative min-h-[540px]">
+              <!-- Alisa Company -->
+              <div
+                class="absolute top-[360px] left-0 right-4 bg-orange-50 border rounded-lg p-3"
+                style="height: 60px"
+              >
+                <div class="font-medium">Alisa Company</div>
+                <div class="text-sm text-gray-500">14.00 - 15.00 WIB</div>
+                <span
+                  class="absolute right-2 top-2 text-xs px-2 py-1 text-orange-500 bg-orange-50 border border-orange-500 rounded"
+                  >Up coming</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
